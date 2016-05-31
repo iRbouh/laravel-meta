@@ -159,6 +159,8 @@ trait Metable {
         // get new meta model instance
         $model = new \Kodeine\Metable\MetaData();
         $model->setTable($this->metaTable);
+        //Set the model connection
+        $model->setConnection($this->getConnectionName());
 
         // model fill with attributes.
         if (func_num_args() > 0) {
